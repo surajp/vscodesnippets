@@ -1,0 +1,90 @@
+{
+	// Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"lightning callback result hanlder": {
+		"prefix": "lcallback",
+		"body": [
+			"$1.setCallback(this,result =>{",
+			"\ttry{",
+			"\t\tif(cmp.isValid() && result.getState()=='SUCCESS'){",
+			"\t\t\tvar retVal = result.getReturnValue();",
+			"\t\t\t$3",
+			"\t\t}else if(result.getState()=='ERROR'){",
+			"\t\t\thelper.handleErrors(result.getError());",
+			"\t\t}",
+			"\t}catch(jex){",
+			"\t\tconsole.error('Error in $2');",
+			"\t\tconsole.error(jex.message);",
+			"\t\thelper.handleErrors('Please retry and contact an administrator if this issue persists');",
+			"\t}",
+			"});"
+		],
+		"description": "Print basic callback handler for apex controller action invocations in lightning"
+	},
+
+	"try catch block": {
+		"prefix": "tcatch",
+		"body": [
+			"try{",
+			"\t$2",
+			"}catch(jex){",
+			"\tconsole.error('Error in $1');",
+			"\tconsole.error(jex.message);",
+			"\thelper.handleErrors('Please retry and contact an administrator if this issue persists');",
+			"}"
+		],
+		"description": "Print try catch block in javascript"
+	},
+
+	"standard helper function": {
+		"prefix": "lfunc",
+		"body": [
+			"function(cmp,evt){",
+			"\tvar helper = this;",
+			"\ttry{",
+			"\t\t$2",
+			"\t}catch(jex){",
+			"\t\tconsole.error('Error in $1');",
+			"\t\tconsole.error(jex.message);",
+			"\t\thelper.handleErrors('Please retry and contact an administrator if this issue persists');",
+			"\t}",
+			"}"
+		],
+		"description": "Print try catch block in javascript"
+	},
+
+	"handle errors": {
+		"prefix": "hErrors",
+		"body": [
+			"handleErrors : function(errors) {",
+			"\tlet toastParams = {",
+			"\t\ttitle: \"System Error\",",
+			"\t\tmessage: \"Unknown error\", // Default error message",
+			"\t\ttype: \"error\"",
+			"\t};",
+			"\tif (errors && Array.isArray(errors) && errors.length > 0) {",
+			"\t\ttoastParams.message = errors[0].message;",
+			"\t\t}else if(errors){",
+			"\t\ttoastParams.message = errors;",
+			"\t}",
+			"\tlet toastEvent = \\$A.get(\"e.force:showToast\");",
+			"\ttoastEvent.setParams(toastParams);",
+			"\ttoastEvent.fire();",
+			"}"
+		],
+		"description": "Print standard method for handling errors in lightning that shows a toast to the user"
+	},
+
+}
