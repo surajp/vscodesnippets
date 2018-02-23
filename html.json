@@ -14,7 +14,7 @@
 	// }
 
 	"init handler": {
-	 	"prefix": "init",
+	 	"prefix": "s-init",
 	 	"body": [
 	 		"<aura:handler name=\"init\" value=\"{!this}\" action=\"{!c.doInit}\"/>",
 	 		"$2"
