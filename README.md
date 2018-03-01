@@ -1,2 +1,2 @@
-# vscodesnippets
-Some snippets for Visual Studio Code
+# vscodesnippets for Salesforce
+Some Salesforce snippets for Visual Studio Code
