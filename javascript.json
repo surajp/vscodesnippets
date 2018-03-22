@@ -62,7 +62,28 @@
 			"\t}",
 			"}"
 		],
-		"description": "Print try catch block in javascript"
+		"description": "Standard helper function with try catch block for Salesforce lightning components"
+	},
+
+	"promise helper function": {
+		"prefix": "s-prom",
+		"body": [
+			"function(cmp,evt){",
+			"\treturn new Promise(\\$A.getCallback((resolve,reject)=>{",
+			"\t\tvar helper = this;",
+			"\t\t\ttry{",
+			"\t\t\t$2",
+			"\t\t\tresolve();",
+			"\t\t}catch(jex){",
+			"\t\t\tconsole.error('Error in $1');",
+			"\t\t\tconsole.error(jex.message);",
+			"\t\t\thelper.handleErrors(\\$A.get('$Label.c.Generic_Exception_Message'));",
+			"\t\t\treject();",
+			"\t\t}",
+			"\t}));",
+			"}"
+		],
+		"description": "Promise function with try catch block for Salesforce lightning component helpers"
 	},
 
 	"handle errors": {
