@@ -27,7 +27,7 @@
 			"\t}catch(jex){",
 			"\t\tconsole.error('Error in $2');",
 			"\t\tconsole.error(jex.message);",
-			"\t\thelper.handleErrors(\\$A.get('$Label.c.Generic_Exception_Message'));",
+			"\t\thelper.handleErrors(\\$A.get('\\$Label.c.Generic_Exception_Message'));",
 			"\t}",
 			"});"
 		],
@@ -42,7 +42,7 @@
 			"}catch(jex){",
 			"\tconsole.error('Error in $1');",
 			"\tconsole.error(jex.message);",
-			"\thelper.handleErrors(\\$A.get('$Label.c.Generic_Exception_Message'));",
+			"\thelper.handleErrors(\\$A.get('\\$Label.c.Generic_Exception_Message'));",
 			"}"
 		],
 		"description": "Print try catch block in javascript"
@@ -58,7 +58,7 @@
 			"\t}catch(jex){",
 			"\t\tconsole.error('Error in $1');",
 			"\t\tconsole.error(jex.message);",
-			"\t\thelper.handleErrors(\\$A.get('$Label.c.Generic_Exception_Message'));",
+			"\t\thelper.handleErrors(\\$A.get('\\$Label.c.Generic_Exception_Message'));",
 			"\t}",
 			"}"
 		],
@@ -77,7 +77,7 @@
 			"\t\t}catch(jex){",
 			"\t\t\tconsole.error('Error in $1');",
 			"\t\t\tconsole.error(jex.message);",
-			"\t\t\thelper.handleErrors(\\$A.get('$Label.c.Generic_Exception_Message'));",
+			"\t\t\thelper.handleErrors(\\$A.get('\\$Label.c.Generic_Exception_Message'));",
 			"\t\t\treject();",
 			"\t\t}",
 			"\t}));",
