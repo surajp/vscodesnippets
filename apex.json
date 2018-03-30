@@ -68,5 +68,27 @@
 			"$3"
 		],
 		"description": "Assert that 2 values are not equal in an Apex Test Class"
-	}
+	},
+
+	"batch Job": {
+			"prefix": "s-batch",
+			"body": [
+				"global class ${1:className} implements Database.Batchable<SObject>{",
+				"",
+				"\tglobal Database.Querylocator start(Database.BatchableContext bc){",
+				"\t\treturn Database.getQuerylocator($2);",
+				"\t}",
+				"",
+				"\tglobal void execute(Database.BatchableContext bc,list<SObject> records){",
+				"\t\t$3",
+				"\t}",
+				"",
+				"\tglobal void finish(Database.BatchableContext bc){",
+				"\t\t$4",
+				"\t}",
+				"",
+				"}"
+			],
+			"description": "Apex Batch Job"
+		}
 }
