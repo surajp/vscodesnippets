@@ -90,5 +90,13 @@
 				"}"
 			],
 			"description": "Apex Batch Job"
+		},
+
+		"send email": {
+			"prefix": "s-email",
+			"body": [
+				"GlobalUtils.SendEmailPostCompletion(bc, 'admin@bSync.com', '$1', '$2');",
+			],
+			"description": "Send Email afer Batch job is completed"
 		}
 }
