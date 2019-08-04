@@ -98,5 +98,27 @@
 				"GlobalUtils.SendEmailPostCompletion(bc, 'admin@bSync.com', '$1', '$2');",
 			],
 			"description": "Send Email afer Batch job is completed"
+		},
+
+		"singleton": {
+			"prefix": "s-singleton",
+			"body": [
+				"public class ${TM_FILENAME_BASE} implements I${TM_FILENAME_BASE}{",
+				"",
+				"\tpublic interface I${TM_FILENAME_BASE}{",
+				"\t}",
+				"",
+				"\t@testVisible private static I${TM_FILENAME_BASE} instance;",
+				"",
+				"\tpublic static I${TM_FILENAME_BASE} newInstance(){",
+				"\t\tif(instance==null)",
+				"\t\t\tinstance = new ${TM_FILENAME_BASE}();",
+				"\t\treturn instance;",
+				"\t}",
+				"",
+				"}"
+			],
+			"description": "Apex Batch Job"
 		}
+
 }
